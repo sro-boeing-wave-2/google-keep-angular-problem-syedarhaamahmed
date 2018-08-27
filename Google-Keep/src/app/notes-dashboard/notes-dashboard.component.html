@@ -1,0 +1,62 @@
+<div class="icon">
+  <div class="link">
+    <a type="button" (click)="AddNote()" id="createNote">
+      <h3>+ Create Note</h3>
+    </a>
+  </div>
+</div>
+<div id="NoteContainer" *ngFor="let note of Notes">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>
+        <div class="title">
+          <div class="icons">
+            <div id="k">
+              <i id="pinned" (click)="pinnedToggle(note)" [class.pinned]="!note.pinned" [style.color]="note.pinned ? 'black': 'brown'"
+                class="fas fa-thumbtack"></i>
+              <i id="delete" (click)="delete(note.id)" class="fas fa-trash"></i>
+              <i id="delete" (click)="EditNote(note.id)" class="fas fa-pen-nib"></i>
+            </div>
+          </div>
+
+          <div class="title_value">
+            <h1>{{note.title}}</h1>
+          </div>
+
+          <hr/>
+        </div>
+        <br>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <br>
+        <h2>{{note.text}}</h2>
+        <hr/>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <b>ToDo's</b>
+      <div *ngFor="let c of note.checklist; let i=index" class="checklist">
+        <div (click)="IsChecked(i,note)" [class.IsChecked]="c.isChecked">
+          {{c.text}}
+        </div>
+      </div>
+      <br/>
+      <hr/>
+      <b>LabelText</b>
+      <br/>
+      <br/>
+      <div class="inline">
+        <ul id="list">
+          <li *ngFor="let d of note.label">
+            {{d.text}}
+          </li>
+        </ul>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div id="NoteContainer" *ngFor="let note of Notes">
+  </div>

@@ -1,0 +1,100 @@
+#createNote{
+  border-radius: none;
+  font-weight: normal !important;
+}
+
+#create-note-form{
+width: 100%}
+
+.Note{
+  width: 250px;
+margin : 0px auto;
+}
+.row{
+  width : 100%;
+}
+#pinned{
+position: relative;
+margin:0px 10px 0px 10px;
+}
+
+.example-card{
+  float: left;
+  background-color:whitesmoke;
+}
+
+.icon {
+
+  padding: 5px 15px 5px 15px;
+  background-color:#154360;
+  color: #ffffff;
+  text-align: center;
+  float: left;
+  margin: 10px;
+}
+
+#pinned.i{
+  color : black;
+}
+.pinned{
+  transform: rotate(45deg);
+}
+#delete{
+position : relative;
+margin:0px 10px 0px 10px;
+}
+.IsChecked
+{
+  text-decoration: line-through;
+}
+.title{
+  width: 250px;
+}
+.icons{
+  float:right;
+}
+#k
+{
+  float: right;
+}
+.title_value{
+  text-align: left;
+}
+.title_value h1{
+  margin-top: 0px
+}
+
+mat-card-title{
+  height: 50px;
+}
+.label{
+  display: flex;
+  width:fit-content;
+}
+.inline{
+
+}
+#list{
+  float: left;
+  display:inline;
+  margin: 0px;
+  list-style-type:  none;
+}
+ul li {
+  display:inline;
+  margin:5px;
+  border-radius: 10px;
+  padding:5px;
+  background-color: rgb(161, 161, 161);
+}
+mat-card-subtitle h2{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+mat-card-subtitle{
+  text-align: left;
+}
+#cdk-overlay-0{
+  position: absolute;
+  background-color:white;
+}

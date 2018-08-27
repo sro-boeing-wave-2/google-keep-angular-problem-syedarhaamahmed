@@ -1,0 +1,54 @@
+<div class="main-edit-form" >
+  <form [formGroup]="EditForm" (ngSubmit)="saveDetails(note.id)">
+    <h2>Update your Note!</h2>
+    <input formControlName="Id" [(ngModel)] = "note.id" hidden/>
+    <label class="center" >
+      <input class="input-val" formControlName="Title" [(ngModel)]="note.title" placeholder="Title" />
+    </label>
+    <label>
+      <input class="input-val" type="text" formControlName="Text" [(ngModel)]="note.text" placeholder="Text" />
+    </label>
+
+    <div formArrayName="checklist">
+      <h2>CheckList</h2>
+      <div *ngFor="let checklist of checklist.controls; let i = index">
+        <div [formGroupName]="i">
+          <div *ngIf="note.checklist[i] != null">
+          <label>
+            <input class="input-val" type="text" formControlName="text" [(ngModel)]="note.checklist[i].text" placeholder="CheckList" />
+          </label>
+          </div>
+          <a class="blue-link" (click)="addchecklist()">+ <u>Add CheckList</u></a>
+
+          <div *ngIf="note.checklist[i] == undefined">
+              <label>
+                <input class="input-val" type="text" formControlName="text"/>
+              </label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div formArrayName="label">
+      <h2>Label</h2>
+      <div *ngFor="let label of label.controls; let i = index">
+        <div [formGroupName]="i">
+          <div *ngIf="note.label[i] !=null">
+          <label>
+            <input class="input-val" type="text" formControlName="text" [(ngModel)] = "note.label[i].text">
+          </label>
+          </div>
+          <div *ngIf="note.label[i] == undefined">
+              <label>
+                <input type="text" formControlName="text">
+              </label>
+              </div>
+              <a class="blue-link" (click)="addlabel()">+ <u>AddLabel</u></a>
+            </div>
+      </div>
+    </div>
+    <button class="btn" type="submit">Submit</button>
+    <button class="btn" type="button" (click)="goBack()">Back</button>
+  </form>
+
+</div>

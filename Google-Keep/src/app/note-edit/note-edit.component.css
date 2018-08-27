@@ -1,0 +1,32 @@
+.main-edit-form{
+  text-align: center;
+}
+
+.main-edit-form h2{
+  text-align: center;
+  margin:  10px 0px 5px 0px;
+}
+
+.input-val{
+  padding: 15px;
+  width: 80%;
+  margin: 10px;
+}
+
+.btn {
+  padding: 15px 30px 15px 30px;
+  margin: 15px;
+  text-decoration: none;
+  border: none;
+  background-color: #154360;
+  color: #ffffff;
+}
+
+.blue-link{
+margin: 5px;}
+
+.center{
+  margin: 0 auto;
+  text-align: center;
+  width: 75%;
+}

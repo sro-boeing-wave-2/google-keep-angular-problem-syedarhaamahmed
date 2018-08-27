@@ -1,0 +1,37 @@
+<form id="create-note-form" [formGroup]="CreateNoteDF" (ngSubmit) = "onSubmit()">
+
+  <h2 class="blue">Create a New Note!</h2>
+  <label>
+    <input class="input-field" type="text" formControlName="Title" placeholder="Title"/>
+  </label><br>
+  <label>
+    <input class="input-field" type="text" formControlName="Text" placeholder="Message"/>
+  </label>
+  <div formArrayName="checklist">
+    <h3 class="blue">CheckList</h3>
+        <div *ngFor="let checklist of checklist.controls; let i = index">
+      <div [formGroupName]="i">
+      <label>
+        <input class="input-field" type="text" formControlName = "text" placeholder="CheckList">
+      </label>
+    </div>
+    </div>
+    <a class="blue" (click) = "addCheckList()">+ <u>Add CheckList</u></a>
+  </div>
+
+  <div formArrayName="label">
+    <h3 class="blue">Label</h3>
+    <div *ngFor="let lab of label.controls; let i = index">
+      <div [formGroupName] = "i">
+      <label>
+        <input class="input-field" type="text" formControlName = "text" placeholder="abel">
+      </label>
+    </div>
+    </div>
+    <a class="blue" (click) = "addLabel()">+ <u>Add Label</u></a>
+  </div>
+
+  <button type="submit">Submit</button>
+  <button type="button" (click)="goBack()">Back</button>
+</form>
+
